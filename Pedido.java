@@ -1,18 +1,25 @@
 public class Pedido {
-    private int numeroPedido;
     private Cliente cliente;
     private Producto producto;
+    private int numeroTarjetaCredito;
 
-    public Pedido(int numeroPedido, Cliente cliente, Producto producto) {
-        this.numeroPedido = numeroPedido;
+    public Pedido(Cliente cliente, int numeroTarjetaCredito, Producto producto) {
         this.cliente = cliente;
+        this.numeroTarjetaCredito = numeroTarjetaCredito;
         this.producto = producto;
     }
 
-    public void mostrarResumen() {
-        System.out.println("\n Pedido #" + numeroPedido);
-        System.out.println(" Cliente: " + cliente.getNombre());
+    public double calcularTotal() {
+        return producto.calcularPrecio();
+    }
+
+    public void listarProducto() {
         producto.mostrarInfo();
-        System.out.println(" Total a pagar: $" + producto.getPrecio());
+    }
+
+    public void mostrarPedido() {
+        cliente.mostrarDatos();
+        listarProducto();
+        System.out.println("💳 Total a pagar: $" + calcularTotal());
     }
 }

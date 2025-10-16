@@ -4,29 +4,28 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // 🧍 Datos del cliente
+        System.out.print("Ingrese su cédula: ");
+        String cedula = sc.next();
+
         System.out.print("Ingrese su nombre: ");
-        String nombreCliente = sc.nextLine();
-        Cliente cliente = new Cliente(nombreCliente);
+        String nombre = sc.next();
 
-        // 🧾 Número de pedido
-        System.out.print("Ingrese el número del pedido: ");
-        int numeroPedido = sc.nextInt();
-        sc.nextLine(); // limpiar buffer
+        Cliente cliente = new Cliente(cedula, nombre);
+        cliente.realizarPedido();
 
-        // 🛒 Tipo de producto
-        System.out.println("\nSeleccione el tipo de producto (foto / impresion / camara): ");
-        String tipo = sc.nextLine();
+        System.out.print("Ingrese el número de tarjeta: ");
+        int tarjeta = sc.nextInt();
 
-        // 🏭 Crear producto con método factory
+        System.out.print("Ingrese el tipo de producto (impresion / camara): ");
+        String tipo = sc.next();
+
         Producto producto = Producto.crearProducto(tipo);
 
-        // 📦 Crear pedido y mostrar resumen
         if (producto != null) {
-            Pedido pedido = new Pedido(numeroPedido, cliente, producto);
-            pedido.mostrarResumen();
+            Pedido pedido = new Pedido(cliente, tarjeta, producto);
+            pedido.mostrarPedido();
         } else {
-            System.out.println(" No se pudo crear el pedido.");
+            System.out.println("❌ Producto no válido.");
         }
 
         sc.close();

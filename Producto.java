@@ -1,31 +1,29 @@
 public abstract class Producto {
-    protected String nombre;
+    protected int numero;
     protected double precio;
+    protected String descripcion;
 
-    public Producto(String nombre, double precio) {
-        this.nombre = nombre;
+    public Producto(int numero, double precio, String descripcion) {
+        this.numero = numero;
         this.precio = precio;
+        this.descripcion = descripcion;
     }
 
     public abstract void mostrarInfo();
+    public abstract double calcularPrecio();
 
-    // 🔹 Método Factory Method simplificado
+    // 🏭 Factory Method (simplificado)
     public static Producto crearProducto(String tipo) {
-        switch (tipo.toLowerCase()) {
-            case "foto":
-                return new Foto("Retrato profesional", 50.0, "1080p");
-            case "impresion":
-                return new Impresion("Poster decorativo", 30.0, "Papel fotográfico");
-            case "camara":
-                return new Camara("Canon EOS 90D", 1200.0, "Canon");
-            default:
-                System.out.println(" Tipo de producto no válido. (foto / impresion / camara)");
-                return null;
+        if (tipo.equalsIgnoreCase("impresion")) {
+            Foto foto = new Foto("retrato.jpg", "JPG", 2.5);
+            return new Impresion(1, 35.0, "Impresión brillante", "Color", "Mate", "A4", new Foto[]{foto});
+        } else if (tipo.equalsIgnoreCase("camara")) {
+            Foto foto = new Foto("prueba.jpg", "PNG", 3.0);
+            return new Camara(2, 800.0, "Cámara profesional", "Canon", "EOS 90D", 24.2, foto);
+        } else {
+            System.out.println("Tipo de producto no válido (impresion / camara)");
+            return null;
         }
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
     public double getPrecio() {

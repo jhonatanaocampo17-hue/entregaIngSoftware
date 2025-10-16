@@ -1,15 +1,19 @@
-public class Foto extends Producto {
-    private String resolucion;
+public class Foto {
+    private String fichero;
+    private String formato;
+    private double tamano;
 
-    public Foto(String nombre, double precio, String resolucion) {
-        super(nombre, precio);
-        this.resolucion = resolucion;
+    public Foto(String fichero, String formato, double tamano) {
+        this.fichero = fichero;
+        this.formato = formato;
+        this.tamano = tamano;
     }
 
-    @Override
-    public void mostrarInfo() {
-        System.out.println(" Foto: " + nombre +
-                           " | Resolución: " + resolucion +
-                           " | Precio: $" + precio);
+    public void print() {
+        System.out.println("🖼️ Foto: " + fichero + " (" + formato + ")");
+    }
+
+    public void mostrar() {
+        System.out.println("Tamaño: " + tamano + " MB");
     }
 }
