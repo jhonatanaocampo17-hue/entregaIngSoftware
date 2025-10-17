@@ -18,12 +18,13 @@ public class Camara extends Producto {
         return foto;
     }
 
+    @Override
     public double calcularPrecio() {
         return precio + resolucion * 10;
     }
 
+    @Override
     public void mostrarInfo() {
-        System.out.println(" Cámara: " + marca +
-         "  Modelo: " + modelo +  "  Resolución: " + resolucion + "MP" +  "  Precio: $" + precio);
+        System.out.println(" Cámara: " + marca +" | Modelo: " + modelo +" | Resolución: " + resolucion + "MP" +" | Descripción: " + descripcion + " | Precio base: $" + precio);
     }
 }

@@ -10,10 +10,6 @@ public class Foto {
     }
 
     public void print() {
-        System.out.println(" Foto: " + fichero + " (" + formato + ")");
-    }
-
-    public void mostrar() {
-        System.out.println("Tamaño: " + tamano + " MB");
+        System.out.println(" Foto: " + fichero + " (" + formato + ", " + tamano + "MB)");
     }
 }

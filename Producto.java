@@ -12,21 +12,31 @@ public abstract class Producto {
     public abstract void mostrarInfo();
     public abstract double calcularPrecio();
 
-    // Factory Method 
+    // Factory Method
     public static Producto crearProducto(String tipo) {
         if (tipo.equalsIgnoreCase("impresion")) {
-            Foto foto = new Foto("retrato.jpg", "JPG", 2.5);
-            return new Impresion(1, 35.0, "Impresión brillante", "Color", "Mate", "A4", new Foto[]{foto});
+            Foto foto1 = new Foto("retrato1.jpg", "JPG", 2.5);
+            Foto foto2 = new Foto("retrato2.jpg", "PNG", 3.1);
+            Foto[] fotos = {foto1, foto2};
+
+            return new Impresion(1001, 35.0, "Impresión brillante",
+                    "Color", "Papel Fotográfico", "A4", fotos);
+
         } else if (tipo.equalsIgnoreCase("camara")) {
-            Foto foto = new Foto("prueba.jpg", "PNG", 3.0);
-            return new Camara(2, 800.0, "Cámara profesional", "Canon", "EOS 90D", 24.2, foto);
+            Foto muestra = new Foto("muestra.png", "RAW", 4.8);
+            return new Camara(2001, 850.0, "Cámara profesional para estudio",
+                    "Canon", "EOS 90D", 24.2, muestra);
         } else {
-            System.out.println("Tipo de producto no válido (impresion / camara)");
+            System.out.println("Tipo de producto no válido (impresion / camara).");
             return null;
         }
     }
 
     public double getPrecio() {
         return precio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 }
