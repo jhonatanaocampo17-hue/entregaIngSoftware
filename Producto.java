@@ -12,7 +12,7 @@ public abstract class Producto {
     public abstract void mostrarInfo();
     public abstract double calcularPrecio();
 
-    // 🏭 Factory Method (simplificado)
+    // Factory Method 
     public static Producto crearProducto(String tipo) {
         if (tipo.equalsIgnoreCase("impresion")) {
             Foto foto = new Foto("retrato.jpg", "JPG", 2.5);

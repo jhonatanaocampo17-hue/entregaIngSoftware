@@ -5,7 +5,7 @@ public class Camara extends Producto {
     private Foto foto;
 
     public Camara(int numero, double precio, String descripcion,
-                  String marca, String modelo, double resolucion, Foto foto) {
+        String marca, String modelo, double resolucion, Foto foto) {
         super(numero, precio, descripcion);
         this.marca = marca;
         this.modelo = modelo;
@@ -14,7 +14,7 @@ public class Camara extends Producto {
     }
 
     public Foto tomarFoto() {
-        System.out.println("📸 Tomando foto con la cámara " + modelo + "...");
+        System.out.println(" Tomando foto con la cámara " + modelo + "...");
         return foto;
     }
 
@@ -23,9 +23,7 @@ public class Camara extends Producto {
     }
 
     public void mostrarInfo() {
-        System.out.println("📷 Cámara: " + marca +
-                           " | Modelo: " + modelo +
-                           " | Resolución: " + resolucion + "MP" +
-                           " | Precio: $" + precio);
+        System.out.println(" Cámara: " + marca +
+         "  Modelo: " + modelo +  "  Resolución: " + resolucion + "MP" +  "  Precio: $" + precio);
     }
 }

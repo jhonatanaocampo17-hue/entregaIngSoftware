@@ -5,7 +5,7 @@ public class Impresion extends Producto {
     private Foto[] fotos;
 
     public Impresion(int numero, double precio, String descripcion,
-                     String color, String tipoPapel, String tamano, Foto[] fotos) {
+        String color, String tipoPapel, String tamano, Foto[] fotos) {
         super(numero, precio, descripcion);
         this.color = color;
         this.tipoPapel = tipoPapel;
@@ -14,7 +14,7 @@ public class Impresion extends Producto {
     }
 
     public void imprimir() {
-        System.out.println("🖨️ Imprimiendo fotos en papel " + tipoPapel + "...");
+        System.out.println(" Imprimiendo fotos en papel " + tipoPapel + "...");
         for (int i = 0; i < fotos.length; i++) {
             fotos[i].print();
         }
@@ -29,9 +29,6 @@ public class Impresion extends Producto {
     }
 
     public void mostrarInfo() {
-        System.out.println("🖨️ Impresión: " + descripcion +
-                           " | Tamaño: " + tamano +
-                           " | Tipo de papel: " + tipoPapel +
-                           " | Precio: $" + precio);
+        System.out.println(" Impresión: " + descripcion + " | Tamaño: " + tamano + " | Tipo de papel: " + tipoPapel + " | Precio: $" + precio);
     }
 }

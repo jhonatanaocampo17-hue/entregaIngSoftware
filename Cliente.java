@@ -12,7 +12,7 @@ public class Cliente {
     }
 
     public void mostrarDatos() {
-        System.out.println("👤 Cliente: " + nombre + " | Cédula: " + cedula);
+        System.out.println(" Cliente: " + nombre + "  Cédula: " + cedula);
     }
 
     public String getNombre() {

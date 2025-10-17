@@ -25,7 +25,7 @@ public class Main {
             Pedido pedido = new Pedido(cliente, tarjeta, producto);
             pedido.mostrarPedido();
         } else {
-            System.out.println("❌ Producto no válido.");
+            System.out.println(" Producto no válido.");
         }
 
         sc.close();

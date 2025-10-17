@@ -10,7 +10,7 @@ public class Foto {
     }
 
     public void print() {
-        System.out.println("🖼️ Foto: " + fichero + " (" + formato + ")");
+        System.out.println(" Foto: " + fichero + " (" + formato + ")");
     }
 
     public void mostrar() {

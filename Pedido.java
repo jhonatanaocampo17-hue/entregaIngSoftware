@@ -20,6 +20,6 @@ public class Pedido {
     public void mostrarPedido() {
         cliente.mostrarDatos();
         listarProducto();
-        System.out.println("💳 Total a pagar: $" + calcularTotal());
+        System.out.println(" Total a pagar: $" + calcularTotal());
     }
 }
